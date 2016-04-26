@@ -1,13 +1,13 @@
 # 初学教程1部分- Webpack介绍Webpack
 
-This is for the people like me whose first intro to webpack was a repository similar to:
+这是一些相关WebPACK库的东西介绍：
 
 * https://github.com/davezuko/react-redux-starter-kit
 * https://github.com/webpack/react-starter
 
-While these repositories are very well put together, they aren't necessarily the best learning tools.
-In my case, I got pretty confused trying to understand what was going on, and scrapped together my
-understanding from a lot of scattered resources.
+虽然这些库的工具非常好的放在一起，他们不一定适合放在一起学习。
+
+我的情况是，我很困惑，试图了解发生了什么，但是大量的分散资源的理解并取消了我的注意力。
 
 我希望这个教程可以使Webpack易学。
 
