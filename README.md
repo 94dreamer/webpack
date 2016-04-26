@@ -15,12 +15,6 @@
 
 至少你要知道Node.js和npm的基础知识。
 
-## 目录
-
-I will gladly accept any and all contributions/corrections. If you have any questions,
-feel free to leave them as issues. If I made mistakes, please point them out. Finally, if you feel
-that I left anything out, or could have explained something better make sure to leave an issue or
-make a pull request.
 
 ## 目录
 
