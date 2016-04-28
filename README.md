@@ -1,7 +1,7 @@
 # 初学教程1部分- Webpack介绍Webpack
 
 这是一些相关WebPACK库的东西介绍：
-
+* 原文：https://github.com/AriaFallah/WebpackTutorial/
 * https://github.com/davezuko/react-redux-starter-kit
 * https://github.com/webpack/react-starter
 
