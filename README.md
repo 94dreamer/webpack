@@ -18,22 +18,22 @@
 
 ## 目录
 
-* [为什么Webpack?](#why-webpack)
-* [基础知识](#the-basics)
-  * [安装](#installation)
-  * [打包](#bundling)
-  * [加载器](#loaders)
-  * [插件](#plugins)
-* [你的配置文件](#your-config-file)
-  * [一个小的例子](#a-minimal-example)
-  * [引入插件](#introducing-plugins)
-* [一个更完整的例子](#a-more-complete-example)
-  * [介绍了装载机](#introducing-loaders)
-  * [添加更多的插件](#adding-more-plugins)
-  * [开发服务器](#the-development-server)
-  * [开始编码](#start-coding)
-* [结论](#conclusion)
-* [最后的想法](#closing-thoughts)
+* [为什么Webpack?](#为什么Webpack?)
+* [基础知识](#基础知识)
+  * [安装](#安装)
+  * [打包](#打包)
+  * [加载器](#加载器)
+  * [插件](#插件)
+* [你的配置文件](#你的配置文件)
+  * [一个小的例子](#一个小的例子)
+  * [引入插件](#引入插件)
+* [一个更完整的例子](#一个更完整的例子)
+  * [介绍了装载机](#介绍了装载机)
+  * [添加更多的插件](#添加更多的插件)
+  * [开发服务器](#开发服务器)
+  * [开始编码](#开始编码)
+* [结论](#结论)
+* [最后的想法](#最后的想法)
 
 ## 为什么要学Webpack？
 
@@ -95,7 +95,7 @@
 
 ### 打包
 
-[Example 1](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example1)
+[Example 1](https://github.com/94dreamer/Webpack/)
 
 ![Official Dependency Tree](http://i.imgur.com/YU4xBPQ.png)
 
@@ -190,7 +190,7 @@ Webpack不会在盒子外自动运行，所以你必须按你的需要。为此�
 这是Webpack默认的配置名称，如果你选择使用自定义的名称，必须使用 `--config`来自定该特殊的配置文件名称。
 
 ### 一个小例子
-[Example 2](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example2)
+[Example 2](https://github.com/94dreamer/Webpack/)
 
 你的目录结构是这样的:
 
@@ -230,7 +230,7 @@ module.exports = {
 
 ### 引入插件
 
-[Example 3](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example3)
+[Example 3](https://github.com/94dreamer/Webpack/)
 
 想象一下，我们使用Webpack来一起打包我们全部的文件，现在我们知道它们全部打包在一起会有900KB。去缩小我们的捆版好的打包文件是一个问题。因为我们需要使用一个之前提到过的叫[UglifyJsPlugin](https://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin)的插件。
 
@@ -324,7 +324,7 @@ MyDirectory
 
 #### 介绍装载器
 
-[Example 4](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example4)
+[Example 4](https://github.com/94dreamer/Webpack/)
 
 在前面的教程中，我提到了加载器(#loaders).。这将有助于在我们的代码中引用非js文件。在这种情况下，我们将需要`style-loader`和`css-loader`。首先  我们需要安装这些加载器：
 
@@ -486,7 +486,7 @@ button {
 
 #### 开发服务器
 
-[Example 6](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example6)
+[Example 6](https://github.com/94dreamer/Webpack/)
 
 现在我们要在浏览器中看到我们的网站，他需要一个网络服务器来服务我们的代码。方便的是webpack自带的`webpack-dev-server`，你需要在本地和全局都安装。
 
@@ -624,7 +624,7 @@ npm run dev
 
 #### 开始编码
 
-[Example 7](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/example7)
+[Example 7](https://github.com/94dreamer/Webpack/)
 
 人们之所以对webpack看起来很紧张是因为我们需要懂得这一些过程才能让我们开始写javascript代码。好了，现在我们已经完成了这个过程，到了教程的高潮部分。
 
@@ -667,7 +667,7 @@ if (module.hot) {
 
 我们已经完成了！
 
-**注意:** 你可能到了你的css被应用事后的延迟，你可能会讨厌你的css被包含在js文件当中。我留出一个例子，[css-extract](https://github.com/AriaFallah/WebpackTutorial/tree/master/part1/css-extract)（提取），描述如何把你的css放进一个不同的文件中。
+**注意:** 你可能到了你的css被应用事后的延迟，你可能会讨厌你的css被包含在js文件当中。我留出一个例子，[css-extract](https://github.com/94dreamer/Webpack/)（提取），描述如何把你的css放进一个不同的文件中。
 
 ## 结论
 
