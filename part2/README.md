@@ -414,7 +414,7 @@ npm install --save-dev babel-eslint eslint-plugin-babel
 
 ## 结论
 
-我把这一切的最终配置放进 [demo1](https://github.com/94dreamer/webpack/part2/#demo1) .
+我把这一切的最终配置放进 [demo1](https://github.com/94dreamer/webpack/part2/demo1/) .
 
 现在我们可以轻松地撰写ES6特性的javascript代码，我们同时更加了解了webpack，当es6的代码跑起在浏览器中的时候还真是激动。
 
