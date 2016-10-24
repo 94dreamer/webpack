@@ -21,7 +21,7 @@
   * [一个新的Loader](#一个新的Loader)
 * [我们完成了？](#我们完成了？)
   * [引入ES6的模块](#引入ES6的模块)
-* [额外的补充](#额外的补充)
+* [额外的收获](#额外的收获)
   * [production环境参数](#production环境参数)
   * [加入Lint](#加入Lint)
 * [结论](#结论)
@@ -238,7 +238,7 @@ const Please = require('pleasejs')
 import Please from 'pleasejs'
 ```
 
-## 额外的补充
+## 额外的收获
 
 然后我们可以使用一个很小的webpack配置：
 
