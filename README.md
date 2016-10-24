@@ -677,8 +677,8 @@ webpack首先是一个模块打包器。它是一个高度模块化和易用的�
 
 Now given that
 
-* 第二部分将使用webpack通过Babel去转译ES6到ES5的语法。
-* 第三部分将使用webpack和React+Babel
+* [第二部分将使用webpack通过Babel去转译ES6到ES5的语法。](https://github.com/94dreamer/webpack/tree/master/part2)
+* [第三部分将使用webpack和React+Babel。](https://github.com/94dreamer/webpack/tree/master/part3)
 
 因为它们都是最常见的用例。
 
