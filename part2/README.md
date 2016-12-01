@@ -47,30 +47,6 @@
 这样就能在普通的javascript环境运行了。
 
 
-### 安装
-
-想使用Webpack大多数的功能只需要我们全局安装一下：
-
-    npm install -g webpack
-
-然而Webpack的一些功能，比如优化插件，需要我们把它安装到本地。在这种情况下我们需要：
-
-    npm install --save-dev webpack
-
-### 命令行
-
-运行Webpack只需要下面一行命令：
-
-    webpack
-
-如果想要Webpack在我们改变文件的同时监听改变并重新构建：
-
-    webpack --watch
-
-如果想要使用自定义名称的Webpack的配置文件:
-
-    webpack --config myconfig.js
-
 ### 如何设定Babel
 
 在项目的根目录下我们可以新建一个后缀名为.babelrc的文件，这里解释一下为什么是.babelrc呢？
