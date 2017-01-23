@@ -8,9 +8,9 @@
 
 ## 必要条件
 
-1.如果你还没有看过第一部分，你应该确认自己对webpack基础部分的了解。
+1. 如果你还没有看过第一部分，你应该确认自己对webpack基础部分的了解。
 
-2.有关ES6的学习和描述，[ECMAScript 6入门](http://es6.ruanyifeng.com/)是个很好的资源，或者是[es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)。
+2. 有关ES6的学习和描述，[ECMAScript 6入门](http://es6.ruanyifeng.com/)是个很好的资源，或者是[es6-cheatsheet](https://github.com/DrkSephy/es6-cheatsheet)。
 
 ## 目录
 
@@ -396,7 +396,7 @@ npm install --save-dev babel-eslint eslint-plugin-babel
 
 将来可能的部分：
 
-* Part3 加入React的项目搭建
+* [Part3 加入React的项目搭建](https://github.com/94dreamer/webpack/tree/master/part3)
 * Part4 涵盖更多进阶的Webpack功能
 
 如果有误或者更好的建议，请在issue提出，我们来一起讨论。
