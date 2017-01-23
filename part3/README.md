@@ -15,10 +15,10 @@
 
 ## 目录
 
-* [Get Started Fast with create-react-app]()
-* [Setting Up Babel with React]() 
-	* [Configuring with Webpack]() 
-	* [Configuring with Babel]()
+* [使用create-react-app快速构建]()
+* [为React配置Babel]() 
+	* [Webpack的配置]() 
+	* [Babel的配置]()
 * [Rendering a React Application]()
 * [Babel-Based Optimizations for React]()
 * [Using react-lite Instead of React for Production]()
