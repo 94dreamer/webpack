@@ -30,9 +30,15 @@
 
 ## 使用 create-react-app 快速构建
 
-[create-react-app](https://www.npmjs.com/package/create-react-app)封装
+[create-react-app](https://www.npmjs.com/package/create-react-app)封装了很多构建react应用的最佳实践。你如果想快速构建和一个简单配置的小项目，它是非常好用的。  
 
-###
+create-react-app一个最具有吸引力的特性是`ejecting`。它会替代掉原本的项目依赖，让你得到一个完整的webpack配置。  
+
+有个需要注意的问题，在你`eject`之后，你不能返回到基础依赖模式，你将不得不保持你设置的结果。
+
+
+## 为React配置Babel
+
 
 
 
