@@ -39,6 +39,7 @@ create-react-app一个最具有吸引力的特性是`ejecting`。它会替代掉
 
 ## 为React配置Babel
 
+在Webpack中使用Babel的
 
 
 
