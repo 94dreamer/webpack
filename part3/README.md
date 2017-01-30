@@ -45,6 +45,12 @@ create-react-app一个最具有吸引力的特性是`ejecting`。它会替代掉
 
 一些React的开发者使用一个称为Flow的语言来扩展我们附上代码注释。这种技术和React结合良好，但是我们不仅仅只能使用它。TypeScript是另一个可行的替代方案，可以和JSX同时工作。
 
+### Webpack的配置
+
+Babel允许我们很容易地在React中使用JSX。有些人喜欢把他们用JSX书写的React组件用.jsx的后缀来命名。Webpack可以根据我们的意愿，基于我们的文件名来运行不同的语法规则。
+
+Webpack提供了`resolve.extensions`的设置，可以让我们做这样的事情。如果你想允许引入import一个Button，
+
 
 
 
