@@ -39,9 +39,11 @@ create-react-app一个最具有吸引力的特性是`ejecting`。它会替代掉
 
 ## 为React配置Babel
 
-在Webpack中使用Babel的
+关于在Webpack中使用Babel的要领，这里有一些很明确的React设置。
 
+大多数React项目依赖一种叫JSX的模版格式。它是JavaScript的超集，可以让我们混入类XML语法。很多人在用起来很感觉非常的方便。
 
+一些React的开发者使用一个称为Flow的语言来扩展我们附上代码注释。这种技术和React结合良好，但是我们不仅仅只能使用它。TypeScript是另一个可行的替代方案，可以和JSX同时工作。
 
 
 
