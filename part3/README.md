@@ -49,7 +49,25 @@ create-react-app一个最具有吸引力的特性是`ejecting`。它会替代掉
 
 Babel允许我们很容易地在React中使用JSX。有些人喜欢把他们用JSX书写的React组件用.jsx的后缀来命名。Webpack可以根据我们的意愿，基于我们的文件名来运行不同的语法规则。
 
-Webpack提供了`resolve.extensions`的设置，可以让我们做这样的事情。如果你想允许引入import一个Button，
+Webpack提供了`resolve.extensions`的设置，可以让我们做这样的事情。如果你想允许引入import一个Button从`‘./Button’`，这个文件的名字叫`Button.jsx`，设置如下：
+
+`webpack.config.js`
+
+```
+
+const common = {
+	...
+	resolve:{
+		extensions:['.js','.jsx'],
+	},
+};
+
+```
+
+loader配置是线性依次匹配的，而不是仅仅匹配`/\.js$/`，我们可以通过`/\.(js|jsx)$/`来延伸匹配到`.jsx`。
+
+在webpack 1 中你必须使用 extensions:['','.js','.jsx'] ，
+
 
 
 
