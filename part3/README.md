@@ -66,10 +66,37 @@ const common = {
 
 loader配置是线性依次匹配的，而不是仅仅匹配`/\.js$/`，我们可以通过`/\.(js|jsx)$/`来延伸匹配到`.jsx`。
 
-在webpack 1 中你必须使用 extensions:['','.js','.jsx'] ，
+> 在webpack 1 中你必须使用 extensions:['','.js','.jsx'] 来匹配扩展的文件名。在Webpack 2中这不是必需的了。
 
+### Babel的配置
 
+想要Babel能转译JSX，我们需要添加一个预设preset。安装它：
 
+```
+npm i babel-preset-react --save-dev
+
+```
+
+你同时也需要连接预设到Babel配置，下面是简单的设置实例：
+
+#### .babelrc
+
+```
+{
+	"presets":[
+		[
+			"es2015",{
+				"modules":false
+			}
+		],
+		"react"
+	]
+}
+```
+
+## 渲染一个React应用程序
+
+为了让一个简单的React应用运行起来，你需要把它装载到一个DOM元素。`html-webpack-plugin`插件能够在这里派上用场。它可以结合`html-webpack-template`或者`html`
 
 
 
