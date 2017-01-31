@@ -96,7 +96,28 @@ npm i babel-preset-react --save-dev
 
 ## 渲染一个React应用程序
 
-为了让一个简单的React应用运行起来，你需要把它装载到一个DOM元素。`html-webpack-plugin`插件能够在这里派上用场。它可以结合`html-webpack-template`或者`html`
+为了让一个简单的React应用运行起来，你需要把它装载到一个DOM元素。`html-webpack-plugin`插件能够在这里派上用场。它可以结合`html-webpack-template`或者`html-webpack-template-pug`来获取更多的功能。你还可以提供一个自定义的模版。
+
+你可以考虑下面的例子：
+
+#### webpack.config.js
+
+```
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const HtmlWebpackTemplate = require('html-webpack-template')；
+
+const common = {
+	...
+	plugins:[
+		new HtmlWebpackTemplate,
+		title:'Demo app',
+		appMountId:'app',//生成可以安装的app
+		mobile:true,//缩放mobile页面
+		inject:false,//html-webpack-template
+	],
+};
+```
 
 
 
