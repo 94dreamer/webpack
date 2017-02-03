@@ -117,8 +117,29 @@ const common = {
 		inject:false,//html-webpack-template
 	],
 };
+
+module.exports = function(env){
+	...
+}
 ```
 
+现在有一个模版和一个DOM元素需要渲染，React需要传入参数，在那里渲染，渲染什么内容：
+
+### app/index.js
+
+```
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+	<div>Hello world</div>,
+	document.getElementById('app')
+);
+```
+
+我们可以这段代码内混入我们的应用程序，取决于我们的口味，我们可以用`index.jsx`的文件名代替这个文件，但是引用`index.js`可能更容易被接受。
+
+> 查阅 Configuring Hot Module Replacement with React 来学习如何设置Webpack和Babel有关React代码的热重载配置项。
 
 
 
