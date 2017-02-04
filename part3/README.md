@@ -19,8 +19,8 @@
 * [为React配置Babel]() 
 	* [Webpack的配置]() 
 	* [Babel的配置]()
-* [Rendering a React Application]()
-* [Babel-Based Optimizations for React]()
+* [渲染一个React应用程序]()
+* [React的Babel-Based优化]()
 * [Using react-lite Instead of React for Production]()
 * [Exposing React Performance Utilities to Browser]()
 * [Optimizing Rebundling Speed During Development]()
@@ -140,6 +140,45 @@ ReactDOM.render(
 我们可以这段代码内混入我们的应用程序，取决于我们的口味，我们可以用`index.jsx`的文件名代替这个文件，但是引用`index.js`可能更容易被接受。
 
 > 查阅 Configuring Hot Module Replacement with React 来学习如何设置Webpack和Babel有关React代码的热重载配置项。
+
+## React的Babel-Based优化
+
+[babel-react-optmize](https://github.com/thejameskyle/babel-react-optimize) 实现了各种你想要尝试的React的优化。
+
+[babel-plugin-transform-react-remove-prop-types](https://www.npmjs.com/package/babel-plugin-transform-react-remove-prop-types) 是有用的，如果我们想从生产环境中移除 propType相关的代码。它也是允许组件作者在设置不同环境变量下能够正常生产代码。
+
+## Using react-lite Instead of React for Production
+
+React is quite heavy library even though the API is quite small considering. There are light alternatives, such as Preact and react-lite. react-lite implements React's API apart from features like propTypes and server side rendering.
+
+You lose out in debugging capabilities, but gain far smaller size. Preact implements a smaller subset of features and it's even smaller than react-lite. Interestingly [preact-compat](https://www.npmjs.com/package/preact-compat) provides support for `propTypes` and bridges the gap between vanilla React and Preact somewhat.
+
+Using react-lite or Preact in production instead of React can save around 100 kB minified code. Depending on your application, this can be a saving worth pursuing. Fortunately integrating react-lite is simple. It takes only a few lines of configuration to pull off.
+
+To get started, install react-lite:
+
+`npm i react-lite --save-dev`
+
+On the webpack side, we can use a `resolve.alias` to point our React imports to react-lite instead. Consider doing this only for your production setup!
+
+```
+resolve: {
+  alias: {
+    'react': 'react-lite',
+    'react-dom': 'react-lite',
+  },
+},
+```
+
+If you try building your project now, you should notice your bundle is considerably smaller.
+
+Similar setup works for Preact too. In that case you would point to preact-compat instead. See [preact-boilerplate](https://github.com/developit/preact-boilerplate) for the exact setup and more information.
+
+[Inferno](https://www.npmjs.com/package/inferno) is yet another alternative. The setup is the same and you can find inferno-compat with a similar idea. I discuss these alternatives in more detail at my slide set known as [React Compatible Alternatives](https://presentations.survivejs.com/react-compatible-alternatives).
+
+> If you stick with vanilla React, you can still optimize it for production usage. See the Setting Environment Variables chapter to see how to achieve this. The same trick works with preact-compat as well.
+
+
 
 
 
