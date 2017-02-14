@@ -16,17 +16,13 @@
 ## 目录
 
 * [使用create-react-app快速构建]()
+* [自己构建一个专属的React脚手架]()
+	* [确定编译环境和依赖包]()
 * [为React配置Babel]() 
 	* [Webpack的配置]() 
 	* [Babel的配置]()
 * [渲染一个React应用程序]()
 * [React的Babel-Based优化]()
-* [Using react-lite Instead of React for Production]()
-* [Exposing React Performance Utilities to Browser]()
-* [Optimizing Rebundling Speed During Development]()
-* [Code Splitting with React]()
-* [Maintaining Components]()
-* [Conclusion]()
 
 ## 使用 create-react-app 快速构建
 
@@ -36,6 +32,79 @@ create-react-app一个最具有吸引力的特性是`ejecting`。它会替代掉
 
 有个需要注意的问题，在你`eject`之后，你不能返回到基础依赖模式，你将不得不保持你设置的结果。
 
+## 自己构建一个专属的React脚手架
+
+### 确定编译环境和依赖包
+
+* 1. 开发环境：先进且稳定的Node.Js执行环境
+* 2. 依赖包管理：NPM包管理或者其它
+
+```
+	npm init
+```
+
+* 3. ES6和JSX编译工具：Babel，同时配置babelrc. 
+
+```
+	npm install --save-dev balbel-cli babel-core babel-polyfill babel-preset-react babel-preset-es2015
+```
+
+* 4. 开发环境配置：确定webpack的安装后，安装相关配置依赖包
+
+```
+npm install --save-dev webpack webpack-dev-server babel-loader sass-loader style-loader css-loader react-hot-loader
+```
+
+* 5. 配置文件书写：webpack.config.dev.js，存放在项目根目录
+
+```
+var path=require('path');
+var fs=require('fs');
+var webpack=require('webpack');
+
+module.exports={
+	devtools:'cheap-module-eval-source-map',
+	entry:{
+		app:[
+			'webpack-hot-middleware/client'
+			'./src/app'
+		],
+		vendors:['react','react-dom','react-router']
+	},
+	output:{
+		filename:'[name].js',
+		publicPath:'/static/'
+	},
+	module:{
+		loaders:[{
+			test:/\.jsx?$/,
+			include:[
+				path.resolve(__dirname,'src')
+			],
+			loaders:['react-hot',src]
+		},{
+			test:/\.scss$/,
+			include:[
+				path.resolve(__dirname,'src')
+			],
+			loader:'style!css!sass?sourceMap=true&sourceMapContens=true'
+		}]
+	},
+	resolve:{
+		extensions:['','.js','.jsx','.scss','.css']
+	},
+	plugins:[
+		new webpack.optimize.CommonsChunkPlugin('vendors','vendors.js'),
+		new webpack.optimize.DedupePlugin(),
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV':JSON.stringify(process.env.NODE_ENV),
+			__DEV__:true
+		}),
+		new webpack.NoErrorsPlugin(),
+		new webpack.HotModuleReplacementPlugin()
+	]
+}
+```
 
 ## 为React配置Babel
 
@@ -94,6 +163,18 @@ npm i babel-preset-react --save-dev
 }
 ```
 
+
+
+
+
+
+
+
+
+
+
+
+
 ## 渲染一个React应用程序
 
 为了让一个简单的React应用运行起来，你需要把它装载到一个DOM元素。`html-webpack-plugin`插件能够在这里派上用场。它可以结合`html-webpack-template`或者`html-webpack-template-pug`来获取更多的功能。你还可以提供一个自定义的模版。
@@ -141,44 +222,20 @@ ReactDOM.render(
 
 > 查阅 Configuring Hot Module Replacement with React 来学习如何设置Webpack和Babel有关React代码的热重载配置项。
 
-## React的Babel-Based优化
+## 优化性配置
+### React的Babel-Based优化
 
 [babel-react-optmize](https://github.com/thejameskyle/babel-react-optimize) 实现了各种你想要尝试的React的优化。
 
 [babel-plugin-transform-react-remove-prop-types](https://www.npmjs.com/package/babel-plugin-transform-react-remove-prop-types) 是有用的，如果我们想从生产环境中移除 propType相关的代码。它也是允许组件作者在设置不同环境变量下能够正常生产代码。
 
-## Using react-lite Instead of React for Production
+### 按需加载
 
-React is quite heavy library even though the API is quite small considering. There are light alternatives, such as Preact and react-lite. react-lite implements React's API apart from features like propTypes and server side rendering.
-
-You lose out in debugging capabilities, but gain far smaller size. Preact implements a smaller subset of features and it's even smaller than react-lite. Interestingly [preact-compat](https://www.npmjs.com/package/preact-compat) provides support for `propTypes` and bridges the gap between vanilla React and Preact somewhat.
-
-Using react-lite or Preact in production instead of React can save around 100 kB minified code. Depending on your application, this can be a saving worth pursuing. Fortunately integrating react-lite is simple. It takes only a few lines of configuration to pull off.
-
-To get started, install react-lite:
-
-`npm i react-lite --save-dev`
-
-On the webpack side, we can use a `resolve.alias` to point our React imports to react-lite instead. Consider doing this only for your production setup!
+[babel-plugin-import]()是一个用于按需加载组件代码和样式的babel插件。
 
 ```
-resolve: {
-  alias: {
-    'react': 'react-lite',
-    'react-dom': 'react-lite',
-  },
-},
+npm install babel-plugin-import --save-dev
 ```
-
-If you try building your project now, you should notice your bundle is considerably smaller.
-
-Similar setup works for Preact too. In that case you would point to preact-compat instead. See [preact-boilerplate](https://github.com/developit/preact-boilerplate) for the exact setup and more information.
-
-[Inferno](https://www.npmjs.com/package/inferno) is yet another alternative. The setup is the same and you can find inferno-compat with a similar idea. I discuss these alternatives in more detail at my slide set known as [React Compatible Alternatives](https://presentations.survivejs.com/react-compatible-alternatives).
-
-> If you stick with vanilla React, you can still optimize it for production usage. See the Setting Environment Variables chapter to see how to achieve this. The same trick works with preact-compat as well.
-
-
 
 
 
