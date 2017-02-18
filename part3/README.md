@@ -81,7 +81,7 @@ module.exports={
 			include:[
 				path.resolve(__dirname,'src')
 			],
-			loaders:['react-hot',src]
+			loaders:['react-hot',src]//不刷新页面，只刷新变化的react组件
 		},{
 			test:/\.scss$/,
 			include:[
