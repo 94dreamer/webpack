@@ -6,8 +6,7 @@ module.exports={
   devtools:'cheap-module-eval-source-map',
   entry:{
     home:[
-      'webpack-hot-middleware/client'
-      'webpack/hot/dev-server',
+      'webpack-hot-middleware/client',
       './src/home.js'
     ],
     vendors:['react','react-dom','react-router']
@@ -54,7 +53,7 @@ module.exports={
       {// expose-loader将需要的变量从依赖包中暴露出来
         test: require.resolve("jquery"),
         loader: "expose-loader?$!expose-loader?jQuery"
-      }，{
+      },{
         test: require.resolve("jquery"), loader: "expose?$! expose?jQuery"
         }// expose-loader将需要的变量从依赖包中暴露出来
       ]
