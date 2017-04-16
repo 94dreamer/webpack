@@ -468,7 +468,7 @@ h1 {
   text-align: center;
 }
 
-#color {
+# color {
   width: 300px;
   height: 300px;
   margin: 0 auto;
